@@ -12,6 +12,7 @@ public class Testes {
 
     Afiliado a1, a2, a3;
     Funcionario f1, f2, f3;
+    Estagiario e1, e2, e3;
 
     @BeforeEach
     void instancia()
@@ -21,8 +22,12 @@ public class Testes {
         a3 = new Afiliado("Luiza");
 
         f1 = new Funcionario(LocalDate.of(2011, 02, 15), "Maria");
-        f2 = new Funcionario(LocalDate.of(2015, 05, 28), "Ivana");
+        f2 = new Funcionario(LocalDate.of(2015, 05, 28), "Ivani");
         f3 = new Funcionario(LocalDate.of(2019, 12, 1), "Renan");
+
+        e1 = new Estagiario("Maicon");
+        e2 = new Estagiario("Lais");
+        e3 = new Estagiario("Suelen");
 
     }
 
@@ -76,5 +81,49 @@ public class Testes {
         System.out.println(f1.toString());
         System.out.println(f2.toString());
         System.out.println(f3.toString());
+    }
+
+    @Test
+    void testeEstagiario() {
+        //Teste1
+        e1.vender();
+        e1.vender();
+        e1.vender();
+        Assertions.assertEquals(15, e1.calcularPontos());
+        Assertions.assertEquals("estagiario novato", e1.mostrarCategoria());
+
+        //Teste2
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        e2.vender();
+        Assertions.assertEquals(60, e2.calcularPontos());
+        Assertions.assertEquals("estagiario experiente", e2.mostrarCategoria());
+
+        //Teste3
+        e3.vender();
+        e3.vender();
+        e3.vender();
+        e3.vender();
+        e3.vender();
+        e3.vender();
+        e3.vender();
+        e3.vender();
+        e3.vender();
+        e3.vender();
+        Assertions.assertEquals( 50, e3.calcularPontos());
+        Assertions.assertEquals("estagiario experiente", e3.mostrarCategoria());
+
+        System.out.println(e1.toString());
+        System.out.println(e2.toString());
+        System.out.println(e3.toString());
     }
 }

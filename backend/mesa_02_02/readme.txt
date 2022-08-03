@@ -14,3 +14,8 @@ Entre 20 e 30 pontos = aprendiz;
 Entre 31 e 40 pontos = bom;
 Mais de 40 pontos = mestre.
 Deve ser implementado um método mostrarCategoria que deve primeiro calcularPontos, depois recategorizar de acordo com a pontuação obtida no método anterior e, finalmente, exibir o nome do vendedor, total de pontos e categoria por console.
+
+Desafio II
+Somos solicitados a criar um terceiro tipo de vendedor chamado estagiário. O objetivo dos estagiários é fazer vendas, onde para cada uma, eles receberão 5 pontos. Os estagiários são categorizados da seguinte forma:
+Menos de 50 pontos = estagiário novato.
+50 pontos ou mais = estagiário experiente.
