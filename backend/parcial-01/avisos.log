@@ -1,0 +1,387 @@
+[2022-08-17 22:12:12] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:12:12] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:12:39] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:12:40] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:12:40] [ ERROR] [FilialDaoH2:39] Error ao salvar filial
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ECINCOESTRELA" not found; SQL statement:
+INSERT INTO FILIAL(NOME, RUA, NUMERO, CIDADE, ESTADO, ECINCOESTRELA) VALUES ('Sao Luiz','Direta','53','Salvador', 'Bahia', 'true') [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:754)
+	at org.h2.command.Parser.parseColumn(Parser.java:1264)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1249)
+	at org.h2.command.Parser.parseInsert(Parser.java:1650)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:186)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:978)
+	at dao.FilialDaoH2.salvar(FilialDaoH2.java:28)
+	at dao.FilialDaoH2.salvar(FilialDaoH2.java:8)
+	at FilialService.salvar(FilialService.java:12)
+	at FilialTest.salvarFilial(FilialTest.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+[2022-08-17 22:14:34] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:14:35] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:14:35] [ ERROR] [FilialDaoH2:39] Error ao salvar filial
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'true' (FILIAL: ""CINCO_ESTRELA"" INTEGER)"; SQL statement:
+INSERT INTO FILIAL(NOME, RUA, NUMERO, CIDADE, ESTADO, CINCO_ESTRELA) VALUES ('Sao Luiz','Direta','53','Salvador', 'Bahia', 'true') [22018-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.table.Column.getDataConversionError(Column.java:413)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:372)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.CommandContainer.executeUpdateWithGeneratedKeys(CommandContainer.java:247)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:168)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:978)
+	at dao.FilialDaoH2.salvar(FilialDaoH2.java:28)
+	at dao.FilialDaoH2.salvar(FilialDaoH2.java:8)
+	at FilialService.salvar(FilialService.java:12)
+	at FilialTest.salvarFilial(FilialTest.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.h2.message.DbException: Data conversion error converting "true" [22018-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueStringBase.getInt(ValueStringBase.java:133)
+	at org.h2.value.Value.convertToInt(Value.java:1575)
+	at org.h2.value.Value.convertTo(Value.java:1135)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	... 79 more
+Caused by: org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "true" [22018-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 85 more
+Caused by: java.lang.NumberFormatException: For input string: "true"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.value.ValueStringBase.getInt(ValueStringBase.java:131)
+	... 83 more
+[2022-08-17 22:16:12] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:16:13] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:16:13] [ ERROR] [FilialDaoH2:39] Error ao salvar filial
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'true' (FILIAL: ""CINCO_ESTRELA"" INTEGER)"; SQL statement:
+INSERT INTO FILIAL(NOME, RUA, NUMERO, CIDADE, ESTADO, CINCO_ESTRELA) VALUES ('Sao Luiz','Direta','53','Salvador', 'Bahia', 'true') [22018-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.table.Column.getDataConversionError(Column.java:413)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:372)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.CommandContainer.executeUpdateWithGeneratedKeys(CommandContainer.java:247)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:168)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:978)
+	at dao.FilialDaoH2.salvar(FilialDaoH2.java:28)
+	at dao.FilialDaoH2.salvar(FilialDaoH2.java:8)
+	at FilialService.salvar(FilialService.java:12)
+	at FilialTest.salvarFilial(FilialTest.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.h2.message.DbException: Data conversion error converting "true" [22018-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueStringBase.getInt(ValueStringBase.java:133)
+	at org.h2.value.Value.convertToInt(Value.java:1575)
+	at org.h2.value.Value.convertTo(Value.java:1135)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	... 79 more
+Caused by: org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "true" [22018-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 85 more
+Caused by: java.lang.NumberFormatException: For input string: "true"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.value.ValueStringBase.getInt(ValueStringBase.java:131)
+	... 83 more
+[2022-08-17 22:18:44] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:18:44] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:24:52] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:24:53] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:24:53] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:24:53] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:24:53] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:24:53] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:24:53] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:24:53] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:24:53] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:24:53] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:26:16] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:26:17] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:26:17] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:26:17] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:26:17] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:26:17] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:26:17] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:26:17] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:26:17] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:26:17] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:27:02] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:27:02] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:27:21] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:27:22] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:27:22] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:27:22] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:27:22] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:27:22] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:27:22] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:27:23] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:27:23] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:27:23] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:28:15] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:28:15] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:28:16] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:28:16] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:28:16] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:28:16] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:28:16] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:28:16] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:28:16] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:28:16] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:29:49] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:29:49] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:30:59] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:30:59] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:31:58] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:31:59] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:31:59] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:31:59] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:31:59] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:31:59] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:31:59] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:31:59] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:31:59] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:31:59] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:33:40] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:33:41] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:33:41] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:33:41] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:33:41] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:33:41] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:33:41] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:33:41] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:33:41] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:33:41] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:34:26] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:34:26] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:34:26] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:34:26] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:34:26] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:34:26] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:34:26] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:34:26] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar
+[2022-08-17 22:34:26] [ INFO ] [FilialDaoH2:18] Tentativa de insercao de uma nova filial
+[2022-08-17 22:34:26] [ DEBUG] [FilialDaoH2:26] Bloco try do metodo salvar

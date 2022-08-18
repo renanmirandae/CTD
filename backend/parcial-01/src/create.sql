@@ -1,0 +1,1 @@
+create table if not exists filial(id int primary key auto_increment, nome varchar(50), rua varchar(50), numero int, cidade varchar(50), estado varchar(30), cinco_estrela int)
