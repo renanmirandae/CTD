@@ -1,0 +1,12 @@
+com\dh\paciente\Endereco.class
+com\dh\paciente\PacienteService.class
+com\dh\dentista\Dentista.class
+com\dh\dentista\DentistaDao.class
+com\dh\paciente\daoPattern\PacienteDaoH2.class
+com\dh\dentista\ConfigurarJDBC.class
+com\dh\dentista\IDao.class
+org\example\App.class
+com\dh\dentista\DentistaService.class
+com\dh\paciente\daoPattern\IDao.class
+com\dh\paciente\Paciente.class
+com\dh\paciente\jdbc\ConfigurarJDBC.class
